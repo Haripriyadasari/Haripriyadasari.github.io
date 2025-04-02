@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dheeraj Navoor</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
   <style>
     * {
       margin: 0;
@@ -33,14 +34,12 @@
     header h1 {
       font-size: 4rem;
       font-weight: 600;
-      animation: fadeUp 1.5s ease-in-out forwards;
     }
 
     header p {
       font-size: 1.2rem;
       margin-top: 10px;
       opacity: 0.7;
-      animation: fadeUp 2s ease-in-out forwards;
     }
 
     nav {
@@ -90,17 +89,6 @@
       margin-bottom: 10px;
     }
 
-    @keyframes fadeUp {
-      0% {
-        opacity: 0;
-        transform: translateY(40px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0px);
-      }
-    }
-
     footer {
       text-align: center;
       padding: 40px;
@@ -119,42 +107,91 @@
 </nav>
 
 <header>
-  <h1>Dheeraj Navoor</h1>
-  <p>Data Science | Full Stack | Innovation Driven</p>
+  <h1 class="reveal-fade">Dheeraj Navoor</h1>
+  <p class="reveal-delay">Data Science | Full Stack | Innovation Driven</p>
 </header>
 
-<section id="about">
+<section id="about" class="reveal-up">
   <h2>About Me</h2>
   <p style="max-width: 700px; margin-top: 10px;">I'm a data-driven problem solver with experience in AI, backend, and data analytics. I love building clean, scalable web apps and exploring modern tech.</p>
 </section>
 
-<section id="projects">
+<section id="projects" class="reveal-up">
   <h2>Projects</h2>
   <div class="projects">
-    <div class="project-card">
+    <div class="project-card reveal-left">
       <h3>Resume Ranker</h3>
       <p>Full-stack system to score resumes against job descriptions using FastAPI + PostgreSQL + React.</p>
     </div>
-    <div class="project-card">
+    <div class="project-card reveal-bottom">
       <h3>Student Portal</h3>
       <p>Student management system with PHP, SQL, and WinSCP backend — clean, secure, and efficient.</p>
     </div>
-    <div class="project-card">
+    <div class="project-card reveal-right">
       <h3>Game of Thrones Analytics</h3>
       <p>Data dashboard built with Dash and Plotly showing relationships and character analytics.</p>
     </div>
   </div>
 </section>
 
-<section id="contact">
+<section id="contact" class="reveal-up">
   <h2>Contact</h2>
   <p>Email: dheeraj@example.com</p>
   <p>LinkedIn: <a href="#" style="color:#1e90ff;">linkedin.com/in/dheerajnavoor</a></p>
 </section>
 
-<footer>
+<footer class="reveal-fade">
   <p>© 2025 Dheeraj Navoor. Crafted with curiosity & code.</p>
 </footer>
+
+<script>
+  ScrollReveal().reveal('.reveal-fade', {
+    delay: 300,
+    distance: '0px',
+    opacity: 0,
+    duration: 1000,
+    easing: 'ease-in-out',
+    reset: false
+  });
+
+  ScrollReveal().reveal('.reveal-delay', {
+    delay: 600,
+    distance: '0px',
+    opacity: 0,
+    duration: 1200,
+    reset: false
+  });
+
+  ScrollReveal().reveal('.reveal-up', {
+    delay: 200,
+    distance: '50px',
+    origin: 'bottom',
+    duration: 1000,
+    easing: 'ease',
+    reset: false
+  });
+
+  ScrollReveal().reveal('.reveal-left', {
+    distance: '60px',
+    origin: 'left',
+    duration: 1000,
+    reset: false
+  });
+
+  ScrollReveal().reveal('.reveal-right', {
+    distance: '60px',
+    origin: 'right',
+    duration: 1000,
+    reset: false
+  });
+
+  ScrollReveal().reveal('.reveal-bottom', {
+    distance: '40px',
+    origin: 'bottom',
+    duration: 1000,
+    reset: false
+  });
+</script>
 
 </body>
 </html>
