@@ -1,110 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Dheeraj's Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dheeraj Navoor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
-      color: #333;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f0f0f;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
     header {
-      background-color: #1e90ff;
-      color: white;
-      padding: 40px 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
+      background: linear-gradient(to right, #1f1f1f, #121212);
     }
+
+    header h1 {
+      font-size: 4rem;
+      font-weight: 600;
+      animation: fadeUp 1.5s ease-in-out forwards;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      opacity: 0.7;
+      animation: fadeUp 2s ease-in-out forwards;
+    }
+
     nav {
-      text-align: center;
-      padding: 10px;
-      background: #333;
+      position: fixed;
+      top: 20px;
+      right: 40px;
+      z-index: 1000;
     }
+
     nav a {
-      color: white;
-      margin: 0 15px;
+      color: #fff;
+      margin-left: 20px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      transition: 0.3s;
     }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
     section {
-      padding: 40px;
-      max-width: 900px;
-      margin: auto;
+      padding: 100px 40px;
     }
-    .project {
-      background: white;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
     }
+
+    .project-card {
+      background: #1e1e1e;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .project-card h3 {
+      margin-bottom: 10px;
+    }
+
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
     footer {
       text-align: center;
-      background: #222;
+      padding: 40px;
       color: #aaa;
-      padding: 20px;
+      font-size: 0.9rem;
+      background: #111;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Dheeraj Navoor</h1>
-  <p>Data Science Enthusiast | Full-Stack Learner | Tech Explorer</p>
-</header>
-
 <nav>
   <a href="#about">About</a>
   <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
   <a href="#contact">Contact</a>
 </nav>
 
+<header>
+  <h1>Dheeraj Navoor</h1>
+  <p>Data Science | Full Stack | Innovation Driven</p>
+</header>
+
 <section id="about">
   <h2>About Me</h2>
-  <p>Hi! I'm Dheeraj, a Master's student in Applied Data Science at Indiana University. I love solving real-world problems with data, exploring the latest in AI, and building full-stack applications. I'm also passionate about nutrition, tech gadgets, and adventure travel.</p>
+  <p style="max-width: 700px; margin-top: 10px;">I'm a data-driven problem solver with experience in AI, backend, and data analytics. I love building clean, scalable web apps and exploring modern tech.</p>
 </section>
 
 <section id="projects">
   <h2>Projects</h2>
-
-  <div class="project">
-    <h3>AI-Powered Resume Ranker</h3>
-    <p>Designed a complete web app with FastAPI, PostgreSQL, and React to analyze resumes based on job descriptions.</p>
+  <div class="projects">
+    <div class="project-card">
+      <h3>Resume Ranker</h3>
+      <p>Full-stack system to score resumes against job descriptions using FastAPI + PostgreSQL + React.</p>
+    </div>
+    <div class="project-card">
+      <h3>Student Portal</h3>
+      <p>Student management system with PHP, SQL, and WinSCP backend — clean, secure, and efficient.</p>
+    </div>
+    <div class="project-card">
+      <h3>Game of Thrones Analytics</h3>
+      <p>Data dashboard built with Dash and Plotly showing relationships and character analytics.</p>
+    </div>
   </div>
-
-  <div class="project">
-    <h3>Student Management System</h3>
-    <p>Developed with HTML, CSS, JavaScript, PHP, and MySQL. Used WinSCP and phpMyAdmin for file and database management.</p>
-  </div>
-
-  <div class="project">
-    <h3>Interactive Game of Thrones Dashboard</h3>
-    <p>Built with Plotly and Dash to visualize network and treemap data from the GoT universe.</p>
-  </div>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li>Languages: Python, Java, SQL</li>
-    <li>Web: HTML, CSS, JavaScript, React, PHP</li>
-    <li>Frameworks: FastAPI, Dash, Flask</li>
-    <li>Tools: Git, VS Code, PostgreSQL, MySQL</li>
-  </ul>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
   <p>Email: dheeraj@example.com</p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/dheerajnavoor" target="_blank">linkedin.com/in/dheerajnavoor</a></p>
+  <p>LinkedIn: <a href="#" style="color:#1e90ff;">linkedin.com/in/dheerajnavoor</a></p>
 </section>
 
 <footer>
-  <p>&copy; 2025 Dheeraj Navoor. All rights reserved.</p>
+  <p>© 2025 Dheeraj Navoor. Crafted with curiosity & code.</p>
 </footer>
 
 </body>
